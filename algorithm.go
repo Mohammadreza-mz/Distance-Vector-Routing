@@ -250,7 +250,7 @@ func terminal(n *network) {
 		fmt.Scan(&queryType)
 		if queryType == "addNode" {
 			n.addNode()
-		} else if queryType == "delNode" {
+		} else if queryType == "deleteNode" {
 			fmt.Scan(&id)
 			n.delNode(id)
 		} else if queryType == "addEdge" {
@@ -261,7 +261,7 @@ func terminal(n *network) {
 			con1, con2 := createConnection(id1, id2)
 			node1.addNei(id2, w, con1)
 			node2.addNei(id1, w, con2)
-		} else if queryType == "delEdge" {
+		} else if queryType == "deleteEdge" {
 			var id1, id2 int
 			fmt.Scan(&id1, &id2)
 			node1 := n.findNode(id1)
